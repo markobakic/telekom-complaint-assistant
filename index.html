@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telekom — AI Podrška</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Tabler Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="page-bg">
+        <!-- Decorative background blobs -->
+
+        <div class="bg-blob blob-1"></div>
+        <div class="bg-blob blob-2"></div>
+    </div>
+
+    <main class="page-wrapper">
+        <img src="assets/ts-logo.png" alt="Telekom Srbija" class="logo-img">
+
+
+        <!-- Card -->
+        <div class="card">
+
+            <!-- Header -->
+            <div class="card-header">
+                <div class="header-top">
+                    <div class="logo-area">
+                        <!-- <div class="logo-placeholder">
+                            <span>Telekom Srbija</span>
+                        </div> -->
+                    </div>
+          
+                </div>
+
+                <div class="header-body">
+                    <h1>Podnesi prijavu ili reklamaciju</h1>
+                    <p>Naš AI sistem automatski analizira vaš zahtev i prosleđuje ga odgovarajućoj službi — bez čekanja na liniji.</p>
+                </div>
+
+                <div class="header-steps">
+                    <div class="step">
+                        <div class="step-icon"><i class="ti ti-pencil"></i></div>
+                        <span>Popunite formu</span>
+                    </div>
+                    <div class="step-arrow"><i class="ti ti-chevron-right"></i></div>
+                    <div class="step">
+                        <div class="step-icon"><i class="ti ti-brain"></i></div>
+                        <span>AI analiza</span>
+                    </div>
+                    <div class="step-arrow"><i class="ti ti-chevron-right"></i></div>
+                    <div class="step">
+                        <div class="step-icon"><i class="ti ti-send"></i></div>
+                        <span>Prosleđivanje</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Body -->
+            <div class="card-body">
+                <form id="complaintForm" novalidate>
+
+                    <!-- Section: Kontakt -->
+                    <div class="form-section">
+                        <div class="section-label">
+                            <i class="ti ti-user-circle"></i>
+                            Vaši kontakt podaci
+                        </div>
+
+                        <div class="field-grid">
+                            <div class="field-group">
+                                <label for="name">
+                                    Ime i prezime
+                                    <span class="required" aria-hidden="true">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <i class="ti ti-user input-icon"></i>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Npr. Marko Petrović"
+                                        required
+                                        autocomplete="name"
+                                    >
+                                </div>
+                                <span class="field-error" id="nameError">Unesite ime i prezime.</span>
+                            </div>
+
+                            <div class="field-group">
+                                <label for="email">
+                                    Email adresa
+                                    <span class="required" aria-hidden="true">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <i class="ti ti-mail input-icon"></i>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="marko@email.com"
+                                        required
+                                        autocomplete="email"
+                                    >
+                                </div>
+                                <span class="field-error" id="emailError">Unesite ispravnu email adresu.</span>
+                            </div>
+
+                            <div class="field-group">
+                                <label for="phone">
+                                    Broj telefona
+                                    <span class="required" aria-hidden="true">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <i class="ti ti-phone input-icon"></i>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        placeholder="+381 60 000 0000"
+                                        required
+                                        autocomplete="tel"
+                                    >
+                                </div>
+                                <span class="field-error" id="phoneError">Unesite broj telefona.</span>
+                            </div>
+
+                            <div class="field-group">
+                                <label for="city">
+                                    Grad
+                                    <span class="required" aria-hidden="true">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <i class="ti ti-map-pin input-icon"></i>
+                                    <input
+                                        type="text"
+                                        id="city"
+                                        name="city"
+                                        placeholder="Beograd"
+                                        required
+                                        autocomplete="address-level2"
+                                    >
+                                </div>
+                                <span class="field-error" id="cityError">Unesite grad.</span>
+                            </div>
+
+                            <div class="field-group field-full">
+                                <label for="address">
+                                    Adresa
+                                    <span class="required" aria-hidden="true">*</span>
+                                </label>
+                                <div class="input-wrapper">
+                                    <i class="ti ti-building input-icon"></i>
+                                    <input
+                                        type="text"
+                                        id="address"
+                                        name="address"
+                                        placeholder="Ulica i broj, stan"
+                                        required
+                                        autocomplete="street-address"
+                                    >
+                                </div>
+                                <span class="field-error" id="addressError">Unesite adresu.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="section-divider"></div>
+
+                    <!-- Section: Problem -->
+                    <div class="form-section">
+                        <div class="section-label">
+                            <i class="ti ti-message-report"></i>
+                            Opis problema
+                        </div>
+
+
+                        <div class="field-group">
+                            <label for="problem">
+                                Detaljan opis
+                                <span class="required" aria-hidden="true">*</span>
+                            </label>
+                            <div class="input-wrapper textarea-wrapper">
+                                <textarea
+                                    id="problem"
+                                    name="problem"
+                                    placeholder="Opišite problem što preciznije — AI sistem će automatski prepoznati vrstu zahteva i proslediti ga nadležnoj službi..."
+                                    required
+                                    rows="5"
+                                ></textarea>
+                            </div>
+                            <div class="field-footer">
+                                <span class="field-error" id="problemError">Opišite problem.</span>
+                                <span class="char-count" id="charCount">0 / 1000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-submit-area">
+                        <button type="submit" id="submitBtn" class="btn-submit">
+                            <span class="btn-text">
+                                <i class="ti ti-send"></i>
+                                Podnesi zahtev
+                            </span>
+                            <span class="btn-loading" aria-hidden="true">
+                                <i class="ti ti-loader-2 spin"></i>
+                                Šalje se...
+                            </span>
+                        </button>
+                        <p class="submit-note">
+                            <i class="ti ti-lock"></i>
+                            Vaši podaci su zaštićeni u skladu sa GDPR regulativom.
+                        </p>
+                    </div>
+
+                </form>
+
+                <!-- Success State -->
+                <div class="state-message success-message" id="successMessage" role="alert" aria-live="polite">
+                    <div class="state-icon success-icon">
+                        <i class="ti ti-circle-check"></i>
+                    </div>
+                    <div class="state-body">
+                        <strong>Zahtev je uspešno podnet!</strong>
+                        <p>Dobićete potvrdu na email adresu u roku od nekoliko minuta. Naša služba će vas kontaktirati najkasnije u roku od 24 sata.</p>
+                    </div>
+                    <button class="btn-new" id="btnNew" type="button">
+                        <i class="ti ti-plus"></i>
+                        Nova prijava
+                    </button>
+                </div>
+
+                <!-- Error State -->
+                <div class="state-message error-message" id="errorMessage" role="alert" aria-live="polite">
+                    <div class="state-icon error-icon">
+                        <i class="ti ti-alert-circle"></i>
+                    </div>
+                    <div class="state-body">
+                        <strong>Došlo je do greške</strong>
+                        <p>Nismo mogli da pošaljemo vaš zahtev. Proverite internet konekciju i pokušajte ponovo.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="card-footer">
+                <div class="footer-links">
+                    <a href="#" class="footer-link">
+                        <i class="ti ti-headset"></i>
+                        Kontakt centar
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="ti ti-file-description"></i>
+                        Uslovi korišćenja
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="ti ti-shield"></i>
+                        Politika privatnosti
+                    </a>
+                </div>
+                <div class="footer-copy">© 2026 Telekom Srbija</div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
