@@ -352,6 +352,7 @@ body {
     outline: none;
     transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
     -webkit-appearance: none;
+    appearance: none;
 }
 
 .input-wrapper input::placeholder,
@@ -434,6 +435,113 @@ body {
 .char-count.over {
     color: var(--error-icon);
     font-weight: 500;
+}
+
+/* --- Upload dropzone ----------------------------------------- */
+.upload-wrapper {
+    position: relative;
+}
+
+.upload-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.upload-dropzone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 18px;
+    border: 1.5px dashed var(--gray-300);
+    border-radius: var(--radius-md);
+    background: var(--gray-50);
+    cursor: pointer;
+    transition: border-color var(--transition), background var(--transition);
+}
+
+.upload-dropzone:hover {
+    border-color: var(--ts-red-mid);
+    background: var(--ts-red-light);
+}
+
+.upload-input:focus-visible ~ .upload-dropzone {
+    border-color: var(--ts-red);
+    box-shadow: var(--shadow-input);
+}
+
+.upload-icon {
+    font-size: 20px;
+    color: var(--gray-400);
+    flex-shrink: 0;
+}
+
+.upload-text {
+    font-size: 13px;
+    color: var(--gray-500);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.upload-dropzone.has-file {
+    border-style: solid;
+    border-color: var(--gray-300);
+    background: #fff;
+}
+
+.upload-dropzone.has-file .upload-icon {
+    color: var(--ts-red);
+}
+
+.upload-dropzone.has-file .upload-text {
+    color: var(--gray-900);
+    font-weight: 500;
+}
+
+.upload-status {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    margin-top: 8px;
+    padding-left: 2px;
+}
+
+.upload-status.loading,
+.upload-status.success,
+.upload-status.error {
+    display: flex;
+}
+
+.upload-status .ti {
+    font-size: 14px;
+}
+
+.upload-status.loading { color: var(--gray-500); }
+.upload-status.success  { color: var(--success-text); }
+.upload-status.error    { color: var(--error-text); }
+
+/* --- Auto-filled fields (from document extraction) ---------- */
+.field-group.auto-filled .input-wrapper input,
+.field-group.auto-filled .input-wrapper textarea {
+    border-color: var(--success-border);
+    background: var(--success-bg);
+}
+
+.field-group.auto-filled label::after {
+    content: 'Iz dokumenta';
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--success-text);
+    background: var(--success-bg);
+    border: 1px solid var(--success-border);
+    padding: 1px 7px;
+    border-radius: 100px;
+    margin-left: auto;
 }
 
 /* --- Category chips ---------------------------------------- */

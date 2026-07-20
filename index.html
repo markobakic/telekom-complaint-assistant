@@ -66,6 +66,55 @@
             <div class="card-body">
                 <form id="complaintForm" novalidate>
 
+                    <!-- Section: Dokument -->
+                    <div class="form-section">
+                        <div class="section-label">
+                            <i class="ti ti-file-upload"></i>
+                            Dokument / Račun
+                        </div>
+
+                        <div class="field-grid">
+                            <div class="field-group field-full">
+                                <label for="document">
+                                    Priložite račun ili dokument (PDF ili slika)
+                                </label>
+                                <div class="upload-wrapper">
+                                    <input
+                                        type="file"
+                                        id="document"
+                                        name="document"
+                                        class="upload-input"
+                                        //accept=".pdf,.jpg,.jpeg,.png,.webp"
+                                        accept=".pdf"
+                                    >
+                                    <label for="document" class="upload-dropzone" id="uploadDropzone">
+                                        <i class="ti ti-cloud-upload upload-icon"></i>
+                                        <span class="upload-text" id="uploadText">Kliknite da izaberete fajl (PDF) — maks. 10MB</span>
+                                    </label>
+                                </div>
+                                <div class="upload-status" id="uploadStatus"></div>
+                            </div>
+
+                            <div class="field-group field-full">
+                                <label for="documentCode">
+                                    Šifra korisnika
+                                </label>
+                                <div class="input-wrapper">
+                                    <i class="ti ti-barcode input-icon"></i>
+                                    <input
+                                        type="text"
+                                        id="documentCode"
+                                        name="documentCode"
+                                        placeholder="Popunjava se automatski nakon uploada, po potrebi izmenite"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="section-divider"></div>
+
                     <!-- Section: Kontakt -->
                     <div class="form-section">
                         <div class="section-label">
@@ -133,7 +182,7 @@
 
                             <div class="field-group">
                                 <label for="city">
-                                    Grad
+                                    Mesto / Grad
                                     <span class="required" aria-hidden="true">*</span>
                                 </label>
                                 <div class="input-wrapper">
